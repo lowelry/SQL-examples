@@ -44,12 +44,29 @@ select employee_name, role_name from roles_employee_49 re
 join roles_49 r on re.role_id = r.id
 join employees_49 e on re.employee_id = e.id;
 
+-- чтобы найти только работников, которым назначена зарплата
+-- (to find only employees who are assigned a salary)
+
+select employee_name, role_name from roles_employee_49 re
+join roles_49 r on re.role_id = r.id
+join employees_49 e on re.employee_id = e.id
+join employee_salary_49 es on re.employee_id = es.employee_id;
+
 -- 7. Вывести имена и должности только Java разработчиков
 -- (Select only Java developers names and positions)
  
 select employee_name, role_name from roles_employee_49 re
 join roles_49 r on re.role_id = r.id
 join employees_49 e on re.employee_id = e.id
+where role_name like '%Java developer%';
+
+-- чтобы найти только Java разработчиков, которым назначена зарплата
+-- (to find only employees who are assigned a salary)
+
+select employee_name, role_name from roles_employee_49 re
+join roles_49 r on re.role_id = r.id
+join employees_49 e on re.employee_id = e.id
+join employee_salary_49 es on re.employee_id = es.employee_id
 where role_name like '%Java developer%';
 
 -- 8. Вывести имена и долности только Python разработчиков
@@ -60,12 +77,30 @@ join roles_49 r on re.role_id = r.id
 join employees_49 e on re.employee_id = e.id
 where role_name like '%Python developer%';
 
+-- чтобы найти только Python разработчиков, которым назначена зарплата
+-- (to find only employees who are assigned a salary)
+
+select employee_name, role_name from roles_employee_49 re
+join roles_49 r on re.role_id = r.id
+join employees_49 e on re.employee_id = e.id
+join employee_salary_49 es on re.employee_id = es.employee_id
+where role_name like '%Python developer%';
+
 -- 9. Вывести имена и должность всех QA иненеров
 -- (Select all QA engineers names and positions)
 
 select employee_name, role_name from roles_employee_49 re
 join roles_49 r on re.role_id = r.id
 join employees_49 e on re.employee_id = e.id
+where role_name like '%QA engineer%';
+
+-- чтобы найти только QA иненеров, которым назначена зарплата
+-- (to find only employees who are assigned a salary)
+
+select employee_name, role_name, salary_id from roles_employee_49 re
+join roles_49 r on re.role_id = r.id
+join employees_49 e on re.employee_id = e.id
+join employee_salary_49 es on re.employee_id = es.employee_id
 where role_name like '%QA engineer%';
 
 -- 10. Вывести имена и должность ручных QA инженеров
@@ -76,12 +111,30 @@ join roles_49 r on re.role_id = r.id
 join employees_49 e on re.employee_id = e.id
 where role_name like '%Manual QA engineer%';
 
+-- чтобы найти только QA иненеров, которым назначена зарплата
+-- (to find only employees who are assigned a salary)
+
+select employee_name, role_name from roles_employee_49 re
+join roles_49 r on re.role_id = r.id
+join employees_49 e on re.employee_id = e.id
+join employee_salary_49 es on re.employee_id = es.employee_id
+where role_name like '%Manual QA engineer%';
+
 -- 11. Вывести имена и должность автоматизаторов QA
 -- (Select Automation QA engineers names and positions)
 
 select employee_name, role_name from roles_employee_49 re
 join roles_49 r on re.role_id = r.id
 join employees_49 e on re.employee_id = e.id
+where role_name like '%Automation QA engineer%';
+
+-- чтобы найти только автоматизаторов QA, которым назначена зарплата
+-- (to find only employees who are assigned a salary)
+
+select employee_name, role_name from roles_employee_49 re
+join roles_49 r on re.role_id = r.id
+join employees_49 e on re.employee_id = e.id
+join employee_salary_49 es on re.employee_id = es.employee_id
 where role_name like '%Automation QA engineer%';
 
 -- 12. Вывести имена и зарплаты Junior специалистов
