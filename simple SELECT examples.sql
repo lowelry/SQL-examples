@@ -2,7 +2,7 @@
 -- (Preconditions: there is the table called "students" with the following information)
 --	id, name, email, password, created_on
 
--- 1. Вывести все поля и все строки.
+-- 1. Вывести все поля и все строки
 -- (Select all fields and lines)
 
 select * from students;
